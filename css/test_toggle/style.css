@@ -1,0 +1,39 @@
+#wrapper {
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	font-family: 'Raleway', sans-serif;
+}
+
+.accordionButton {	
+	width: 100%;
+	height: 40px;
+	color: white;
+	float: left;
+	_float: none;  /* Float works in all browsers but IE6 */
+	background: #4870cf;
+	border-bottom: 1px solid #FFFFFF;
+	cursor: pointer;
+	line-height: 40px;
+}
+
+.accordionButton p{
+	margin-left : 60px;
+}
+	
+.accordionContent {	
+	width: 100%;
+	height: 50px;
+	float: left;
+	_float: none; /* Float works in all browsers but IE6 */
+	background: #fff;
+}
+	
+
+.on {
+	background: #4870cf;
+}
+	
+.over {
+	background: rgba(51,102,204,0.75);
+}
