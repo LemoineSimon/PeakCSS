@@ -12,8 +12,8 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video{
 	margin: 0;
@@ -23,7 +23,7 @@ time, mark, audio, video{
 	font: inherit;
 	vertical-align: baseline;
 }
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
     display: block;
 }
@@ -46,18 +46,18 @@ table {
     border-spacing: 0;
 }
 a{
-    text-decoration: none;		
+    text-decoration: none;
 }
 
 html{width: 100%;background-color: #FFF;}
 body{margin: auto;position:relative;font-family: 'Raleway', sans-serif;}
 .content{max-width:75%; min-width:800px;margin:auto;position:relative;}
 
-::-moz-selection { 
+::-moz-selection {
     background:#3a85bc;
     color:#FFF;
 }
-::selection { 
+::selection {
     background:#3a85bc;
     color:#FFF;
 }
@@ -76,8 +76,8 @@ header h1{
     line-height:70px;
 }
 header h1 a{
-    font-size: 35px;	
-    color: #3a85bc;	
+    font-size: 35px;
+    color: #3a85bc;
     line-height: 70px;
     font-weight: 100;
 }
@@ -100,7 +100,7 @@ header ul{
 header ul li{
     display: inline-block;
     line-height: 70px;
-    margin: 0 20px 0 20px;
+    margin: 0 20px;
 }
 header ul li a{
     color: #3a85bc;
@@ -161,11 +161,11 @@ header ul a.active{
 .toggle table{margin-left:4%; margin-top:10px;}
 .toggle table tr td{padding-bottom:25px;}
 .toggle table tr th{
-    padding: 2px 10px 2px 10px;
+    padding: 2px 10px;
     color: #333;
 }
 .toggle table td{
-    padding: 2px 10px 2px 10px;
+    padding: 2px 10px;
     text-align:left;
 }
 .toggle table td:first-child{padding: 2px 10px 2px 0; width:200px;}
@@ -243,11 +243,11 @@ Page de test sur customize2
     margin-top: 5px;
 }
 .accordionContent table tr th{
-    padding: 2px 10px 2px 10px;
+    padding: 2px 10px;
     color: #333;
 }
 .accordionContent table td{
-    padding: 2px 10px 2px 10px;
+    padding: 2px 10px;
 }
 .accordionContent table input[type="text"]{
     padding: 4px 12px;
@@ -297,10 +297,10 @@ PEAK PHOTO HOME
     text-align:center;
     bottom:40px;
     -webkit-transition: all 0.2s ease-in-out;
--moz-transition: all 0.2s ease-in-out;
--ms-transition: all 0.2s ease-in-out;
--o-transition: all 0.2s ease-in-out;
-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
 }
 #bt_howuse{
     padding:14px 47px;
@@ -319,7 +319,7 @@ HOW TO USE
 }
 #select, #custom, #generate{
     margin:30px 0;
-}   
+}
 .right{
     float:right;
 }
@@ -377,7 +377,7 @@ EXPLORE HIS CAPACITIES
     display:inline-block;
     position:absolute;
     border-radius:2px
-        -moz-box-shadow: 0px 1px 10px 0px #969696;
+    -moz-box-shadow: 0px 1px 10px 0px #969696;
     -webkit-box-shadow: 0px 1px 10px 0px #969696;
     -o-box-shadow: 0px 1px 10px 0px #969696;
     box-shadow: 0px 1px 10px 0px #969696;
@@ -418,7 +418,7 @@ CONTACT
     font-family: 'Raleway', sans-serif;
     margin: 20px 0 0 90px;
     line-height: 30px;
-}   
+}
 #contact_us span{
     font-size: 60px;
 }
@@ -426,7 +426,7 @@ CONTACT
 /*** Champ form ***/
 #center{
     margin: 0 auto;
-}       
+}
 #contact_us form {
     margin-left: 35px;
 }
@@ -450,7 +450,7 @@ CONTACT
     font-size: 20px;
     padding: 10px;
     color: #fff;
-}     
+}
 .box textarea{
     border: 2px solid #fff;
     background-color : transparent;
@@ -469,8 +469,7 @@ CONTACT
     width: 95%;
     height: 50px;
     border-radius: 2px;
-    margin-bottom: 20px;
-    margin-top: 25px;
+    margin: 20px auto;
     font-size: 20px;
     padding: 10px;
     color: #3a85bc;
