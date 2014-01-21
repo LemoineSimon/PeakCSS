@@ -443,103 +443,114 @@ q{
 CONTACT
 ==========================*/
 #contact_us{
-    background-color: rgba(51,102,204,0.75);
-    height: 550px;
-    width: 100%;
+    background-color:rgba(51,102,204,0.75);
+    height:550px;
+    width:100%;
 }
 #contact_us h2{
-    color: #fff;
-    text-align: center;
-    padding-top: 35px;
+    color:#fff;
+    text-align:center;
+    padding-top:35px;
 }
 .text_contact{
-    font-size: 30px;
-    color: #fff;
-    font-family: 'Raleway', sans-serif;
-    margin: 20px 0 0 90px;
-    line-height: 30px;
-}   
-#contact_us span{
-    font-size: 60px;
+    font-size:30px;
+    color:#fff;
+    font-family:'Raleway', sans-serif;
+    margin:20px 0 0 90px;
+    line-height:30px;
 }
-
+#contact_us span{
+    font-size:60px;
+}
 /*** Champ form ***/
 #center{
-    margin: 0 auto;
-}       
-#contact_us form {
-    margin-left: 35px;
+    margin:0 auto;
+}
+#contact_us form{
+    margin-left:35px;
 }
 .box{
-    width: 49%;
-    display: inline-block;
-    margin-bottom: 1%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 35px;
-    position:  relative;
-    vertical-align: top;
+    width:49%;
+    display:inline-block;
+    margin-bottom:1%;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:35px;
+    position:relative;
+    vertical-align:top;
 }
 .box input{
-    border: 2px solid #fff;
-    background-color : transparent;
-    width: 90%;
-    height: 25px;
-    border-radius: 2px;
-    margin-bottom: 23px;
-    font-size: 20px;
+    border:2px solid #fff;
+    background-color:transparent;
+    width:90%;
+    height:25px;
+    /*border-radius*/
+    -webkit-border-radius:2px;
+       -moz-border-radius:2px;
+            border-radius:2px;
+    margin-bottom:6.4%;
+    font-size:20px;
     font-weight:400;
     font-style:normal;
-    padding: 10px;
-    color: #fff;
-}     
+    padding:10px;
+    color:#fff;
+}
 .box textarea{
-    border: 2px solid #fff;
-    background-color : transparent;
-    font-family: 'Raleway', sans-serif;
-    width: 90%;
-    height: 95px;
-    border-radius: 2px;
-    margin: auto;
-    font-size: 20px;
+    border:2px solid #fff;
+    background-color:transparent;
+    font-family:'Raleway', sans-serif;
+    width:90%;
+    height:104px;
+    /*border-radius*/
+    -webkit-border-radius:2px;
+       -moz-border-radius:2px;
+            border-radius:2px;
+    margin:auto;
+    font-size:20px;
     font-weight:400;
     font-style:normal;
-    padding: 10px;
-    color: #fff;
-    resize: none;
+    padding:10px;
+    margin-bottom: 3px;
+    color:#fff;
+    resize:none;
 }
 #button_send{
-    border: 2px solid #fff;
-    background-color :  #fff;
-    width: 95%;
-    height: 50px;
-    border-radius: 2px;
-    margin-bottom: 20px;
-    margin-top: 25px;
-    font-size: 20px;
-    padding: 10px;
-    color: #3a85bc;
-
+    border:1px solid #fff;
+    background-color:#fff;
+    width:95%;
+    height:50px;
+    /*border-radius*/
+    -webkit-border-radius:2px;
+       -moz-border-radius:2px;
+            border-radius:2px;
+    margin-top:5%;
+    -webkit-margin-top: 5.4%
+    font-size:20px;
+    padding:10px;
+    color:#3a85bc;
+    font-family:'Raleway', sans-serif;
 }
-input::-webkit-input-placeholder{color:white;font-family: 'Raleway', sans-serif;}
-input:-moz-placeholder{color:white;font-family: 'Raleway', sans-serif;}
-textarea::-webkit-input-placeholder{color:white;font-family: 'Raleway', sans-serif;}
-textarea:-moz-placeholder{color:white;font-family: 'Raleway', sans-serif;}
+
+input::-webkit-input-placeholder{color:white;font-family:'Raleway', sans-serif;}
+input:-moz-placeholder{color:white;font-family:'Raleway', sans-serif;}
+textarea::-webkit-input-placeholder{color:white;font-family:'Raleway', sans-serif;}
+textarea:-moz-placeholder{color:white;font-family:'Raleway', sans-serif;}
 
 /*** Verification form ***/
 #contact_us span.error{
-    text-align: center;
-    background-color: rgba(255, 255, 255,0.5);
+    text-align:center;
+    background-color:rgba(255, 255, 255,0.5);
     margin:20px 35px;
-    color: #333;
+    color:#333;
     font-size:20px;
-    font-weight: 300;
+    font-weight:300;
     padding:15px 5px 15px 5px;
     width:91%;
     display:inline;
     position:relative;
     float:left;
 }
+
 
 input::-webkit-input-placeholder{color:white;font-family: 'Raleway', sans-serif;}
 input:-moz-placeholder{color:white;font-family: 'Raleway', sans-serif;}
