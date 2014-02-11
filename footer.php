@@ -37,7 +37,6 @@
                     $y = $('[rel='+$id+'].text-shadow.vertical').val();
                     $blur = $('[rel='+$id+'].text-shadow.blur').val();
                     $('[name='+$id+']').css({textShadow: $x + "px " + $y + "px " + $blur + "px " + ($shadowColor)});
-                    console.log('text-shadow');
                 };
                 function boxShadow(param1){
                     $id = param1;
@@ -50,17 +49,11 @@
                     $style= $inset+' '+$x+'px '+$y+'px '+$blur+'px '+$spread+'px '+$shadowColor;
                     $('[name='+$id+']').css("box-shadow", $style);
                 };
-                
-//                $('.picker').click(function(){
                 $('body').on('click','.picker',function(){
                     $id = $(this).attr("rel");
                     $(this).hasClass('shadow') ? $shadow = 1 : $shadow = 0;
                     $(this).hasClass('text-shadow') ? $textShadow = 1 : $textShadow = 0;
-                    $(this).hasClass('backgroundColor') ? $backgroundColor = 1 : $backgroundColor = 0;
-                    console.log('shadow = '+$shadow);
-                    console.log('text-shadow = '+$textShadow);
-                    console.log('backgroundColor = '+$backgroundColor);
-                
+                    $(this).hasClass('backgroundColor') ? $backgroundColor = 1 : $backgroundColor = 0;                
                 $('.picker').colpick({
                     layout:'hex',
                     submit:0,
@@ -73,11 +66,9 @@
                                 $shadowColor = '#'+hex;
                                 $textShadow==1 ? textShadow($id) : boxShadow($id);
                             }else if($backgroundColor==1){
-                                console.log("a la classe backgroundColor");
                                 $('[rel='+$id+'].picker.backgroundColor').val(hex).css('border-color','#'+hex);
                                 $('[name='+$id+']').css('background','#'+hex);
                             }else{
-                                console.log("a la classe color");
                                 $('[rel='+$id+'].picker.color').val(hex).css('border-color','#'+hex);
                                 $('[name='+$id+']').css('color','#'+hex);
                             }
@@ -85,27 +76,21 @@
                     }
                 });
                     });
-//                $('.size').click(function(){
                 $('body').on('click','.size',function(){
                     $id = $(this).attr("rel");
                     $type = $('[name='+$id+']').attr("type");
                     $val = $(this).val();
                     $type=='text' ? $('[name='+$id+']').css({'font-size':$val+'px', 'height':$val+'px'}) : $('[name='+$id+']').css('font-size',$val+'px');
                 });
-//                $('.font').click(function(){
                 $('body').on('click','.font',function(){
-                    console.log("font");
                     $id = $(this).attr("rel");
-                    console.log($id);
                     $val = $(this).val();
                     $('[name='+$id+']').css('font-family',$val);
                 });
-                //$('.text-shadow').keyup(function(){
                 $('body').on('keyup','.text-shadow',function(){
                     $id = $(this).attr("rel");
                     textShadow($id);
                 });
-                //$('.box-shadow').keyup(function(){
                 $('body').on('keyup','.box-shadow',function(){
                     $id = $(this).attr("rel");
                     boxShadow($id);
@@ -115,7 +100,6 @@
                     boxShadow($id);
                 });
                 $('body').on('click','input[type=checkbox].backgroundColor',function(){
-                    console.log("CHECKBOX BACKGROUND");
                     $id = $(this).attr("rel");
                     if($(this).is(':checked')){
                         $('[rel='+$id+'].backgroundColor.picker').prop('disabled',false).css('background','#FFF');
@@ -129,13 +113,9 @@
                     $ref = $(this).attr("name");
                     $refL = $ref.length;
                     $parent = $(this).parent();
-                    //console.log($parent);
                     $child = $parent.children().children().children().last();
-                    //console.log($child);
                     $name = $child.children().children().attr("name");
-                    //console.log($name);
                     $n = $name.substring($refL);
-                    //console.log($n);
                     $n++;
                     if($ref=='text'){
                         $string = '<tr><td><p contenteditable="true" class="example" name="text'+$n+'">Example</p></td><td><select class="font" rel="text'+$n+'"><option>Arial</option><option>Helvetica</option><option>Cambria</option><option>Times New Roman</option></select></td><td><select class="size" rel="text'+$n+'"<?php for($i=10; $i<41; $i++){echo '<option value="'.$i.'">'.$i.' px</option>';$i++;}?></select></td><td><span class="before-input radius-left">#</span><input type="text" class="color picker radius-right" rel="text'+$n+'"></input></td><td><span class="before-input radius-left shadow">Horizontal</span><input type="text" class="text-shadow horizontal shadow radius-right" value="0" rel="text'+$n+'"/><span class="before-input radius-left shadow">Vertical</span><input type="text" class="text-shadow vertical shadow radius-right" value="0" rel="text'+$n+'"/><br><span class="before-input radius-left shadow">Blur</span><input type="text" class="text-shadow blur shadow radius-right" value="0" rel="text'+$n+'"/><span class="before-input radius-left shadow">#</span><input type="text" class="text-shadow shadow picker radius-right" width="40" rel="text'+$n+'"></input></td><td><input type="checkbox" class="backgroundColor radius-right" rel="text'+$n+'"/><span class="before-input radius-left">#</span><input type="text" class="backgroundColor picker radius-right" rel="text'+$n+'" disabled></input></td></tr>}';
