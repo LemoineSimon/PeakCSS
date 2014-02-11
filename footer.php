@@ -50,8 +50,6 @@
                     $style= $inset+' '+$x+'px '+$y+'px '+$blur+'px '+$spread+'px '+$shadowColor;
                     $('[name='+$id+']').css("box-shadow", $style);
                 };
-                
-//                $('.picker').click(function(){
                 $('body').on('click','.picker',function(){
                     $id = $(this).attr("rel");
                     $(this).hasClass('shadow') ? $shadow = 1 : $shadow = 0;
@@ -85,14 +83,12 @@
                     }
                 });
                     });
-//                $('.size').click(function(){
                 $('body').on('click','.size',function(){
                     $id = $(this).attr("rel");
                     $type = $('[name='+$id+']').attr("type");
                     $val = $(this).val();
                     $type=='text' ? $('[name='+$id+']').css({'font-size':$val+'px', 'height':$val+'px'}) : $('[name='+$id+']').css('font-size',$val+'px');
                 });
-//                $('.font').click(function(){
                 $('body').on('click','.font',function(){
                     console.log("font");
                     $id = $(this).attr("rel");
@@ -100,12 +96,10 @@
                     $val = $(this).val();
                     $('[name='+$id+']').css('font-family',$val);
                 });
-                //$('.text-shadow').keyup(function(){
                 $('body').on('keyup','.text-shadow',function(){
                     $id = $(this).attr("rel");
                     textShadow($id);
                 });
-                //$('.box-shadow').keyup(function(){
                 $('body').on('keyup','.box-shadow',function(){
                     $id = $(this).attr("rel");
                     boxShadow($id);
@@ -129,13 +123,9 @@
                     $ref = $(this).attr("name");
                     $refL = $ref.length;
                     $parent = $(this).parent();
-                    //console.log($parent);
                     $child = $parent.children().children().children().last();
-                    //console.log($child);
                     $name = $child.children().children().attr("name");
-                    //console.log($name);
                     $n = $name.substring($refL);
-                    //console.log($n);
                     $n++;
                     if($ref=='text'){
                         $string = '<tr><td><p contenteditable="true" class="example" name="text'+$n+'">Example</p></td><td><select class="font" rel="text'+$n+'"><option>Arial</option><option>Helvetica</option><option>Cambria</option><option>Times New Roman</option></select></td><td><select class="size" rel="text'+$n+'"<?php for($i=10; $i<41; $i++){echo '<option value="'.$i.'">'.$i.' px</option>';$i++;}?></select></td><td><span class="before-input radius-left">#</span><input type="text" class="color picker radius-right" rel="text'+$n+'"></input></td><td><span class="before-input radius-left shadow">Horizontal</span><input type="text" class="text-shadow horizontal shadow radius-right" value="0" rel="text'+$n+'"/><span class="before-input radius-left shadow">Vertical</span><input type="text" class="text-shadow vertical shadow radius-right" value="0" rel="text'+$n+'"/><br><span class="before-input radius-left shadow">Blur</span><input type="text" class="text-shadow blur shadow radius-right" value="0" rel="text'+$n+'"/><span class="before-input radius-left shadow">#</span><input type="text" class="text-shadow shadow picker radius-right" width="40" rel="text'+$n+'"></input></td><td><input type="checkbox" class="backgroundColor radius-right" rel="text'+$n+'"/><span class="before-input radius-left">#</span><input type="text" class="backgroundColor picker radius-right" rel="text'+$n+'" disabled></input></td></tr>}';
