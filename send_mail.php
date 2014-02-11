@@ -56,7 +56,7 @@
 											  <a href=\'contact.php\'>Try again !</a> </p>
 											</div>';   
 								 }
-				   }
+				   			}
 								   
 				}/* if(peg_match()) */else{
 					echo '<div class="summary">
