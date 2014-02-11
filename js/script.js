@@ -58,86 +58,89 @@ $(document).ready(function(){
 	====================================================*/
     
     /* Fonction de changement CSS */
-    display_error = function(field){
-        $(field).css({
-            border : '2px solid rgb(255, 203, 96)',
-            'background-image' : 'url(\'./img/attention_form.png\')',
-            'background-repeat' : 'no-repeat',
-            'background-position' : '95%',
-            'background-size' : '20px'
-        });
-    }
+		display_error = function(field){
+			$(field).css({
+				border : '2px solid rgb(255, 203, 96)',
+				'background-image' : 'url(\'./img/attention_form.png\')',
+				'background-repeat' : 'no-repeat',
+				'background-position' : '95%',
+				'background-size' : '20px'
+			});
+		}
     
     /** On cache le message d'erreur **/
-    $(".error").css({
-        display: 'none'
-    });
+		$(".error").css({
+			display: 'none'
+		});
     
+    /** Vérification du champs nom **/
+		$("#button_send").click(function(){	
+			/** Champs de saisie Nom **/
+			if($("#name").val() == ""){
+				$(".error").css({display : 'inline'});		
+				display_error($('#name'));		            
+				return false;
+			}else if(!$("#name").val().match(/^[a-zA-Zéèàêùë-\s][^0-9_(\)!]{2,30}$/i)){
+				$(".error").css({display : 'inline'});		
+				display_error($('#name'));	              	
+				return false;
+			}else{	            	
+				$("#name").css({border : '2px solid white', background: 'none' });			
+				return true;
+			}               	
+		});               	
     
-    $("#button_send").click(function(){	
-        /** Champs de saisie Nom **/
-        if($("#name").val() == ""){
-            $(".error").css({display : 'inline'});		
-            display_error($('#name'));		            
-            return false;
-        }else if(!$("#name").val().match(/^[a-zA-Z_-\s][^0-9(\)!]{2,13}$/i)){
-            $(".error").css({display : 'inline'});		
-            display_error($('#name'));	              	
-            return false;
-        }else{	            	
-            $("#name").css({border : '2px solid white', background: 'none' });			
-            return true;
-        }               	
-    });               	
+    /** Vérification du champs mail **/
+		$("#button_send").click(function(){			
+			/** Champs de saisie Mail **/
+			if($("#mail").val() == ""){
+				$(".error").css({display : 'inline'});
+				display_error($('#mail'));
+				return false;
+			}else if(!$("#mail").val().match(/[a-z0-9!#$%&'*+=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+=?^_`{|}~-]+)*@(?:[a-z](?:[a-z-]*[a-z-])?\.)+(?:[A-Z]{2}|com|org|net|fr)/)){
+				$(".error").css({display : 'inline'});
+				display_error($('#mail'));
+				return false;
+			}else{	            	
+				$("#mail").css({border : '2px solid white',background: 'none'});
+				return true;
+			}               	
+		});
     
-    
-    $("#button_send").click(function(){			
-        /** Champs de saisie Mail **/
-        if($("#mail").val() == ""){
-            $(".error").css({display : 'inline'});
-            display_error($('#mail'));
-            return false;
-        }else if(!$("#mail").val().match(/[a-z0-9!#$%&'*+=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+=?^_`{|}~-]+)*@(?:[a-z](?:[a-z]*[a-z])?\.)+(?:[A-Z]{2}|com|org|net|fr)/)){
-            $(".error").css({display : 'inline'});
-            display_error($('#mail'));
-            return false;
-        }else{	            	
-            $("#mail").css({border : '2px solid white',background: 'none'});
-            return true;
-        }               	
-    });
-    
-    $("#button_send").click(function(){			
-        /** Champs de saisie Why to contact us ? **/
-        if($("#why").val() == ""){
-            $(".error").css({display : 'inline'});
-            display_error($('#why'));
-            return false;
-        }else if(!$("#why").val().match(/^[a-zA-Z0-9-!]+$/i)){
-            $(".error").css({display : 'inline'});
-            display_error($('#why'));
-            return false;
-        }else{	            	
-            $("#why").css({border : '2px solid white',background: 'none'});
-            return true;
-        }               	
-    });  
-    
-    $("#button_send").click(function(){			
-        /** Champs de saisie TEXTAREA **/
-        if($(".text_besoin").val() == ""){
-            $(".error").css({display : 'inline'});
-            display_error($('.text_besoin'));
-            return false;
-        }else 
-		if($(".text_besoin").val().match(/^[a-z0-9_-!\s]{,255}$/)){
-            $(".error").css({display : 'inline'});
-            display_error($('.text_besoin'));
-            return false;
-        }else{	            	
-            $(".text_besoin").css({border : '2px solid white',background: 'none'});
-            return true;
-        }               	
-    });
+	/** Vérification du champs why **/
+		$("#button_send").click(function(){			
+			/** Champs de saisie Why to contact us ? **/
+			if($("#why").val() == ""){
+				$(".error").css({display : 'inline'});
+				display_error($('#why'));
+				return false;
+			}else if(!$("#why").val().match(/^[a-zA-Z0-9éèàêùçë_-\s-!:']{3,50}$/)){
+				$(".error").css({display : 'inline'});
+				display_error($('#why'));
+				return false;
+			}else{	            	
+				$("#why").css({border : '2px solid white',background: 'none'});
+				return true;
+			}               	
+		});  
+	
+    /** Vérification du champs textarea **/
+		$("#button_send").click(function(){			
+			/** Champs de saisie TEXTAREA **/
+			if($(".text_besoin").val() == ""){
+				$(".error").css({display : 'inline'});
+				display_error($('.text_besoin'));
+				return false;
+			}else if(!$(".text_besoin").val().match(/^[a-zA-Z0-9éèàêùçë_-\s-!?:()'']{2,255}$/i)){	
+				if($(".text_besoin").val() == "<script>"){
+					$(".error").css({display : 'inline'});
+					display_error($('.text_besoin'));
+					return false;
+				}
+			}else{	            	
+				$(".text_besoin").css({border : '2px solid white',background: 'none'});
+				return true;
+			} 
+		});
     
 });

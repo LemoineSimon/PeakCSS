@@ -10,7 +10,7 @@
 				<span class="error"><p><img src="./img/attention_form.png" alt="attention" width="20px"/> 
 					The form has not been sent. Please correct and resubmit the form. Thank you!  </p></span>
 
-				<form id="formulaire_contact" method="post" accept-charset="UTF-8" action="mail.php">
+				<form id="formulaire_contact" method="post" accept-charset="UTF-8" action="send_mail.php">
 					<div class="box">
 						<input type="text" class="first" id="name" name="name" placeholder="Your name *"/>
 						<input type="text" id="mail" name="mail" placeholder="Your Email *"/>

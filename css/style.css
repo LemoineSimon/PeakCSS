@@ -657,6 +657,7 @@ CONTACT
 /*    padding:10px;*/
     color:#3a85bc;
     font-family:'Raleway', sans-serif;
+	cursor:pointer;
 }
 
 /*** Verification form ***/
@@ -700,6 +701,9 @@ Send MAIL
     padding-left: 20%;
     padding-bottom: 5%;
     padding-top: 5%;
+}
+.summary a, .summary_01 a{
+	cursor: pointer; 
 }
 /*=========================
 QUOTE
