@@ -54,7 +54,7 @@
 										 unset($_POST['mail']);
 										 unset($_POST['why']);
 										 unset($_POST['message_area']);
-										  	 
+										 
 										 header ('Location:mail_valid.php');
 										 exit();
 									}else {
