@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>PeakCSS - Home</title>
+        <title>PeakCSS</title>
         <meta name="description" content="PeakCSS is a tools to create and custom your own CSS">
         <meta name="viewport" content="width=device-width">       
         <link rel="icon" type="image/png" href="img/favicon.png" />        

@@ -114,7 +114,7 @@ $(document).ready(function(){
 				$(".error").css({display : 'inline'});
 				display_error($('#why'));
 				return false;
-			}else if(!$("#why").val().match(/^[a-zA-Z0-9éèàêùçë_-\s-!:']{3,50}$/)){
+			}else if(!$("#why").val().match(/^[a-zA-Z0-9éèàêùçë_-\s-!:'()]{3,50}$/)){
 				$(".error").css({display : 'inline'});
 				display_error($('#why'));
 				return false;
@@ -131,7 +131,7 @@ $(document).ready(function(){
 				$(".error").css({display : 'inline'});
 				display_error($('.text_besoin'));
 				return false;
-			}else if(!$(".text_besoin").val().match(/^[a-zA-Z0-9éèàêùçë_-\s-!?:()'']{2,255}$/i)){	
+			}else if(!$(".text_besoin").val().match(/^[a-zA-Z0-9éèàêùçë_-\s-!?:()'']{2,}$/i)){	
 				if($(".text_besoin").val() == "<script>"){
 					$(".error").css({display : 'inline'});
 					display_error($('.text_besoin'));
@@ -142,5 +142,4 @@ $(document).ready(function(){
 				return true;
 			} 
 		});
-    
 });
