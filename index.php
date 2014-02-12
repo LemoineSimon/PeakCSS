@@ -17,7 +17,7 @@ require "header.php";
         <div id="select" class="line">
             <div class="description">
                 <h3>1. Select</h3>
-                <p>Tools PeakCSS will allow you to set up a HTML structure according to your needs. The addition of simple element, in a HTML structure, as of the text, a button or still one fields input contained in a form. In some click your structure will be made!</p>
+                <p>Tools PeakCSS will allow you to set up a HTML structure according to your needs. The addition of simple elements, in a HTML structure, like the text, a button or still one fields input contained in a form. In some clicks your structure will be made!</p>
             </div>
             <div class="pic right">
                 <img src="img/check.png" alt="check">
@@ -28,14 +28,14 @@ require "header.php";
                 <img src="img/custom.png" alt="custom">
             </div>
             <div class="description right">
-                <h3>2. Custom</h3>
-                <p>All the HTML tags beforehand selected can be customizable very easily in some clicks.To be able to optimize the customization most exactly and to answer totally your aims of design. Moreover an overview is available immediately on-line.</p>
+                <h3>2. Customize</h3>
+                <p>All the HTML tags selected beforehand can be customizable means very easily in some clicks.To be able to optimize the customization most exactly and to answer totally your aims of design. Moreover an overview is immediately available on-line.</p>
             </div>    
         </div>
         <div id="generate" class="line">
             <div class="description">
                 <h3>3. Generate</h3>
-                <p>After completing two steps detailed above, all settings will be saved in a CSS stylesheet and HTML structure will also be automatically generated in an HTML file according to your choice. All the generated files will then be downloaded and apply directly. </br></br>
+                <p>After completing the two steps detailed above, all the settings will be saved in a CSS stylesheet and the HTML structure will also be automatically generated in an HTML file according to your choice. All the generated files will then be downloaded and applied directly. </br></br>
                 <span> Now it's your turn ! </span></p>
             </div>
             <div class="pic right">
