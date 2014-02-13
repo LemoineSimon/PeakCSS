@@ -38,48 +38,70 @@
 					
 				if(isset($_POST['send'])){
 					if(!empty($_POST['name']) && !empty($_POST['mail']) && !empty($_POST['why']) && !empty($_POST['message_area'])){
-						if(preg_match($regex_name, $_POST['name']) && preg_match($regex_mail, $_POST['mail'])  && preg_match($regex_area, $_POST['message_area']) && preg_match($regex_why, $_POST['why'])){
-										  
-									$to = "mathieu.dou@gmail.com";
-									$sujet = 'PeakCSS contact form ';
-									$message = 'From : '.$_POST['mail']."\r\n";
-											
-									$message .= "Name : ".stripcslashes($_POST['name'])."\r\n";
-									$message .= "Why : ".stripcslashes($_POST['why'])."\r\n";
-									$message .= "Message : ".stripcslashes($_POST['message_area'])."\r\n";											 
-											  
-									if (mail($to,$sujet,$message)){
-										  	 
-										 unset($_POST['name']);
-										 unset($_POST['mail']);
-										 unset($_POST['why']);
-										 unset($_POST['message_area']);
+						if(preg_match($regex_name, $_POST['name'])){
+							if(preg_match($regex_mail, $_POST['mail'])){ 
+								if(preg_match($regex_why, $_POST['why'])){
+									if(preg_match($regex_area, $_POST['message_area'])){
 										 
-										 header ('Location:mail_valid.php');
-										 exit();
-									}else {
-									    //Le mail n'a pas été envoyé
-									     echo '<div class="summary_01">
-												 <p> An error occured when submitting the form by email  
-												 <a href=\'contact.php\'>Try again !</a> </p>
-											   </div>';   
-									}	   
-						 }/* if(peg_match()) */else{
-								echo '<div class="summary">
-										<p> The form has not been sent. 
-										Please verify that all fields are correct and correspond to information requested.
+										    $to = "mathieu.dou@gmail.com";
+											$sujet = 'PeakCSS contact form ';
+											$message = 'From : '.$_POST['mail']."\r\n";
+													
+											$message .= "Name : ".stripcslashes($_POST['name'])."\r\n";
+											$message .= "Why : ".stripcslashes($_POST['why'])."\r\n";
+											$message .= "Message : ".stripcslashes($_POST['message_area'])."\r\n";											 
+													  
+											if (mail($to,$sujet,$message)){
+												 
+												 unset($_POST['name']);
+												 unset($_POST['mail']);
+												 unset($_POST['why']);
+												 unset($_POST['message_area']);
+												 
+												 header ('Location:mail_valid.php');
+												 exit();
+											}else {
+												 echo '<div class="summary_01">
+														 <p> An error occured when submitting the form by email  
+														 <a href=\'contact.php\'>Try again !</a> </p>
+													   </div>';   
+											}
+										  
+									}/* preg_match textarea */else{
+										echo '<div class="summary">
+											<p> The textarea field is not correct, check it! 
+											Thank you! </p>
+											<a href="contact.php"> Try again ! </a>
+										</div>';
+									}
+								}/* preg_match why */else{
+									echo '<div class="summary">
+										<p> The why field is not correct, check it! 
 										Thank you! </p>
 										<a href="contact.php"> Try again ! </a>
-									  </div>'; 
-						 }
-										   
-				   	 }/* if(!empty) */else{
+									</div>';
+								}
+							}/* preg_match mail */else{
+								echo '<div class="summary">
+									<p> The mail field is not correct, check it! 
+									Thank you! </p>
+									<a href="contact.php"> Try again ! </a>
+								</div>';
+							}
+						}/* preg_match name */else{
+							echo '<div class="summary">
+									<p> The name field is not correct, check it! 
+									Thank you! </p>
+									<a href="contact.php"> Try again ! </a>
+								</div>';
+						}							
+					}/* empty*/else{
 						echo '<div class="summary">
 								<p> The form has not been sent. Please check that the fields are not empty. Thank you! </p>
 								<a href="contact.php"> Try again !</a>
 							  </div>';
-				     }
-				  }/* if(isset)*/				
+				    }
+				}/* isset Valid */							
 			 ?>
 			
 			
