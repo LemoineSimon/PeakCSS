@@ -101,11 +101,12 @@ header nav{
     display:inline-block;
     position:absolute;
     right:0;
+    top:0;
 }
 header ul{
     list-style-type:none;
     text-align:center;
-    height: 80px;
+    /*height: 80px;*/
 }
 header ul li{
     display: inline-block;

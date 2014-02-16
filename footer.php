@@ -15,7 +15,7 @@
             <ul>
                 <li><a href="project_team.php">Team PeakCSS</a></li>
                 <li><a href="project_team.php#project">The project</a></li>
-                <li><a href="customize.php">Conditions of use</a></li>
+                <li><a href="#">Conditions of use</a></li>
             </ul>          
         </div>   
         <div class="bottom-footer">
@@ -61,7 +61,6 @@
                     onChange:function(hsb,hex,rgb,fromSetColor){
                         if(!fromSetColor){
                             if($shadow==1){
-                                console.log("a la classe shadow");
                                 $('[rel='+$id+'].picker.shadow').val(hex).css('border-color','#'+hex);
                                 $shadowColor = '#'+hex;
                                 $textShadow==1 ? textShadow($id) : boxShadow($id);

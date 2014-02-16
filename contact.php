@@ -1,8 +1,8 @@
 <?php 
 		REQUIRE 'header.php'; 		
-		header( 'Cache-Control: no-store, no-cache, must-revalidate' ); 
+		/*header( 'Cache-Control: no-store, no-cache, must-revalidate' );
 		header( 'Cache-Control: post-check=0, pre-check=0', false ); 
-		header( 'Pragma: no-cache' );
+		header( 'Pragma: no-cache' );*/
 ?>
 		
 	<div id="contact_us"> 
@@ -16,13 +16,13 @@
 				
 				<form id="formulaire_contact" name="contact" method="post" accept-charset="UTF-8" action="contact.php">
 					<div class="box">
-						<input type="text" class="first" id="name" name="name" placeholder="Your name *"/>
-						<input type="text" id="mail" name="mail" placeholder="Your Email *"/>
-						<input type="text" id="why" name="why" placeholder="Why to contact us ? *"/>
+						<input type="text" class="first" id="name" name="name" placeholder="Your name *" value="<?php if(!empty($_POST["name"])) echo $_POST["name"]; ?>"/>
+						<input type="text" id="mail" name="mail" placeholder="Your Email *" value="<?php if(!empty($_POST["name"])) echo $_POST["mail"]; ?>"/>
+						<input type="text" id="why" name="why" placeholder="Why to contact us ? *" value="<?php if(!empty($_POST["name"])) echo $_POST["why"]; ?>"/>
 						<input type="hidden" id="hidden" name="hidden" value="0"/>
 					</div> 
 					<div class="box">
-						<textarea class="text_besoin" rows="5" cols="60" name="message_area" id="message_area" placeholder="Shoot your ideas !"></textarea>
+						<textarea class="text_besoin" rows="5" cols="60" name="message_area" id="message_area" placeholder="Shoot your ideas !"><?php if(!empty($_POST["name"])) echo $_POST["message_area"]; ?></textarea>
 						<input type="submit" id="button_send" name="send" value="SEND IT AWAY !" />
 					</div> 
 				</form>
