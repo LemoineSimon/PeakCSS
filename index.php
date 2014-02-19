@@ -1,6 +1,4 @@
-<?php 
-require "header.php";    
-?>
+<?php require "header.php"; ?>
 <div id="peakphoto">
     <div class="content">
         <div id="catch">

@@ -9,9 +9,9 @@
         <link rel="icon" type="image/png" href="img/favicon.png" />        
         <?php
             //Regle les problemes de cache sous chrome (OU PAS), ça me casser les burnes.
-        $string = 'css/style.css?'.time();
+        //$string = 'css/style.css?'.time();
         ?>
-        <link type="text/css" rel="stylesheet" href="<?php echo $string;?>"/>
+        <link type="text/css" rel="stylesheet" href="css/style.css"/>
         <link href="css/test_toggle/style.css" rel="stylesheet" type="text/css" />
         <link type="text/css" rel="stylesheet" href="css/colpick.css"/>
     </head>
