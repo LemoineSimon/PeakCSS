@@ -29,8 +29,10 @@
         <script type='text/javascript' src="js/script.js"></script>
         <script type='text/javascript'>
             $(document).ready(function(){
+                //Default Shadow Color
                 $shadowColor='#000';
                 
+                //Default text-shadow function
                 function textShadow(param1){
                     $id = param1;
                     $x = $('[rel='+$id+'].text-shadow.horizontal').val();
@@ -38,6 +40,7 @@
                     $blur = $('[rel='+$id+'].text-shadow.blur').val();
                     $('[name='+$id+']').css({textShadow: $x + "px " + $y + "px " + $blur + "px " + ($shadowColor)});
                 };
+                //Default box-shadow function
                 function boxShadow(param1){
                     $id = param1;
                     $x = $('[rel='+$id+'].box-shadow.horizontal').val();
@@ -49,55 +52,63 @@
                     $style= $inset+' '+$x+'px '+$y+'px '+$blur+'px '+$spread+'px '+$shadowColor;
                     $('[name='+$id+']').css("box-shadow", $style);
                 };
+                
+                //Clic on the button color
                 $('body').on('click','.picker',function(){
                     $id = $(this).attr("rel");
                     $(this).hasClass('shadow') ? $shadow = 1 : $shadow = 0;
                     $(this).hasClass('text-shadow') ? $textShadow = 1 : $textShadow = 0;
                     $(this).hasClass('backgroundColor') ? $backgroundColor = 1 : $backgroundColor = 0;                
-                $('.picker').colpick({
-                    layout:'hex',
-                    submit:0,
-                    colorScheme:'dark',
-                    onChange:function(hsb,hex,rgb,fromSetColor){
-                        if(!fromSetColor){
-                            if($shadow==1){
-                                $('[rel='+$id+'].picker.shadow').val(hex).css('border-color','#'+hex);
-                                $shadowColor = '#'+hex;
-                                $textShadow==1 ? textShadow($id) : boxShadow($id);
-                            }else if($backgroundColor==1){
-                                $('[rel='+$id+'].picker.backgroundColor').val(hex).css('border-color','#'+hex);
-                                $('[name='+$id+']').css('background','#'+hex);
-                            }else{
-                                $('[rel='+$id+'].picker.color').val(hex).css('border-color','#'+hex);
-                                $('[name='+$id+']').css('color','#'+hex);
+                    $('.picker').colpick({
+                        layout:'hex',
+                        submit:0,
+                        colorScheme:'dark',
+                        onChange:function(hsb,hex,rgb,fromSetColor){
+                            if(!fromSetColor){
+                                if($shadow==1){
+                                    $('[rel='+$id+'].picker.shadow').val(hex).css('border-color','#'+hex);
+                                    $shadowColor = '#'+hex;
+                                    $textShadow==1 ? textShadow($id) : boxShadow($id);
+                                }else if($backgroundColor==1){
+                                    $('[rel='+$id+'].picker.backgroundColor').val(hex).css('border-color','#'+hex);
+                                    $('[name='+$id+']').css('background','#'+hex);
+                                }else{
+                                    $('[rel='+$id+'].picker.color').val(hex).css('border-color','#'+hex);
+                                    $('[name='+$id+']').css('color','#'+hex);
+                                }
                             }
                         }
-                    }
-                });
                     });
+                });
+                //Click on size
                 $('body').on('click','.size',function(){
                     $id = $(this).attr("rel");
                     $type = $('[name='+$id+']').attr("type");
                     $val = $(this).val();
                     $type=='text' ? $('[name='+$id+']').css({'font-size':$val+'px', 'height':$val+'px'}) : $('[name='+$id+']').css('font-size',$val+'px');
                 });
+                //Click on font
                 $('body').on('click','.font',function(){
                     $id = $(this).attr("rel");
                     $val = $(this).val();
                     $('[name='+$id+']').css('font-family',$val);
                 });
+                //Click on input in text-shadow section
                 $('body').on('keyup','.text-shadow',function(){
                     $id = $(this).attr("rel");
                     textShadow($id);
                 });
+                //Click on input in box-shadow section
                 $('body').on('keyup','.box-shadow',function(){
                     $id = $(this).attr("rel");
                     boxShadow($id);
                 });
+                //Click on input inset for shadow
                $('body').on('click','.inset',function(){
                     $id = $(this).attr("rel");
                     boxShadow($id);
                 });
+                //Enable or Disable backgroundColor
                 $('body').on('click','input[type=checkbox].backgroundColor',function(){
                     $id = $(this).attr("rel");
                     if($(this).is(':checked')){
@@ -108,10 +119,11 @@
                         $('[name='+$id+']').css('background','');
                     }
                 });
+                //Remove a line of an Element
                 $('body').on('click','button.delete',function(){
-                    $parent = $(this).parent().parent();
-                    $parent.remove();  
+                    $(this).parent().parent().remove();
                 });
+                //Add a line of element
                 $('.add').click(function(){
                     $ref = $(this).attr("name");
                     $refL = $ref.length;
