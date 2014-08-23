@@ -1,58 +1,58 @@
-<footer>
-    <div class="content">
-        <div class="column">
-            <ul>
-                <li><a href="index.php">Home</a></li>
-                <li><a href="customize.php">Customize</a></li>
-                <li><a href="explore.php">Explore</a></li>
-                <li><a href="contact.php">Contact</a></li>                    
-            </ul>            
-        </div>
-        <div class="column">
-            <h2>Peak<span>CSS</span></h2>
-        </div>
-        <div class="column">
-            <ul>
-                <li><a href="project_team.php">Team PeakCSS</a></li>
-                <li><a href="project_team.php#project">The project</a></li>
-                <li><a href="#">Conditions of use</a></li>
-            </ul>          
-        </div>   
-        <div class="bottom-footer">
+    <footer>
+        <div class="content">
+            <div class="column">
+                <ul>
+                    <li><a href="index.php">Home</a></li>
+                    <li><a href="customize.php">Customize</a></li>
+                    <li><a href="explore.php">Explore</a></li>
+                    <li><a href="contact.php">Contact</a></li>                    
+                </ul>            
+            </div>
+            <div class="column">
+                <h2>Peak<span>CSS</span></h2>
+            </div>
+            <div class="column">
+                <ul>
+                    <li><a href="project_team.php">Team PeakCSS</a></li>
+                    <li><a href="project_team.php#project">The project</a></li>
+                    <li><a href="#">Conditions of use</a></li>
+                </ul>          
+            </div>   
+            <div class="bottom-footer">
               <p class="copyright">All Right Reserved - PeakCSS - 2014</p>
-        </div>
-    </div>
-</footer>
-<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
-<script src="js/anim_home.js" type="text/javascript" language="JavaScript"></script>
-        <script type='text/javascript' src="js/colpick.js"></script>
-        <script type='text/javascript' src="js/script.js"></script>
-        <script type='text/javascript'>
-            $(document).ready(function(){
-                //Default Shadow Color
-                $shadowColor='#000';
-                
-                //Default text-shadow function
-                function textShadow(param1){
-                    $id = param1;
-                    $x = $('[rel='+$id+'].text-shadow.horizontal').val();
-                    $y = $('[rel='+$id+'].text-shadow.vertical').val();
-                    $blur = $('[rel='+$id+'].text-shadow.blur').val();
-                    $('[name='+$id+']').css({textShadow: $x + "px " + $y + "px " + $blur + "px " + ($shadowColor)});
-                };
-                //Default box-shadow function
-                function boxShadow(param1){
-                    $id = param1;
-                    $x = $('[rel='+$id+'].box-shadow.horizontal').val();
-                    $y = $('[rel='+$id+'].box-shadow.vertical').val();
-                    $blur = $('[rel='+$id+'].box-shadow.blur').val();
-                    $spread = $('[rel='+$id+'].box-shadow.spread').val();
-                    $inset='';
-                    $('[rel='+$id+'].box-shadow.inset').is(':checked') ? $inset= 'inset' : $inset='';
-                    $style= $inset+' '+$x+'px '+$y+'px '+$blur+'px '+$spread+'px '+$shadowColor;
-                    $('[name='+$id+']').css("box-shadow", $style);
-                };
-                
+          </div>
+      </div>
+  </footer>
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="js/anim_home.js" type="text/javascript" language="JavaScript"></script>
+  <script type='text/javascript' src="js/colpick.js"></script>
+  <script type='text/javascript' src="js/script.js"></script>
+  <script type='text/javascript'>
+  $(document).ready(function(){
+        //Default Shadow Color
+        $shadowColor='#000';
+        
+        //Default text-shadow function
+        function textShadow(param1){
+            $id = param1;
+            $x = $('[rel='+$id+'].text-shadow.horizontal').val();
+            $y = $('[rel='+$id+'].text-shadow.vertical').val();
+            $blur = $('[rel='+$id+'].text-shadow.blur').val();
+            $('[name='+$id+']').css({textShadow: $x + "px " + $y + "px " + $blur + "px " + ($shadowColor)});
+        };
+        //Default box-shadow function
+        function boxShadow(param1){
+            $id = param1;
+            $x = $('[rel='+$id+'].box-shadow.horizontal').val();
+            $y = $('[rel='+$id+'].box-shadow.vertical').val();
+            $blur = $('[rel='+$id+'].box-shadow.blur').val();
+            $spread = $('[rel='+$id+'].box-shadow.spread').val();
+            $inset='';
+            $('[rel='+$id+'].box-shadow.inset').is(':checked') ? $inset= 'inset' : $inset='';
+            $style= $inset+' '+$x+'px '+$y+'px '+$blur+'px '+$spread+'px '+$shadowColor;
+            $('[name='+$id+']').css("box-shadow", $style);
+        };
+        
                 //Clic on the button color
                 $('body').on('click','.picker',function(){
                     $id = $(this).attr("rel");
@@ -79,7 +79,7 @@
                             }
                         }
                     });
-                });
+});
                 //Click on size
                 $('body').on('click','.size',function(){
                     $id = $(this).attr("rel");
@@ -104,7 +104,7 @@
                     boxShadow($id);
                 });
                 //Click on input inset for shadow
-               $('body').on('click','.inset',function(){
+                $('body').on('click','.inset',function(){
                     $id = $(this).attr("rel");
                     boxShadow($id);
                 });
@@ -134,7 +134,7 @@
                     $n++;
                     if($ref=='text'){
                         $string = '<tr><td><p contenteditable="true" class="example" name="text'+$n+'">Example</p></td><td><select class="font" rel="text'+$n+'"><option>Arial</option><option>Helvetica</option><option>Cambria</option><option>Times New Roman</option></select></td><td><select class="size" rel="text'+$n+'"<?php for($i=10; $i<41; $i++){echo '<option value="'.$i.'">'.$i.' px</option>';$i++;}?></select></td><td><span class="before-input radius-left">#</span><input type="text" class="color picker radius-right" rel="text'+$n+'"></input></td><td><span class="before-input radius-left shadow">Horizontal</span><input type="text" class="text-shadow horizontal shadow radius-right" value="0" rel="text'+$n+'"/><span class="before-input radius-left shadow">Vertical</span><input type="text" class="text-shadow vertical shadow radius-right" value="0" rel="text'+$n+'"/><br><span class="before-input radius-left shadow">Blur</span><input type="text" class="text-shadow blur shadow radius-right" value="0" rel="text'+$n+'"/><span class="before-input radius-left shadow">#</span><input type="text" class="text-shadow shadow picker radius-right" width="40" rel="text'+$n+'"></input></td><td><input type="checkbox" class="backgroundColor radius-right" rel="text'+$n+'"/><span class="before-input radius-left">#</span><input type="text" class="backgroundColor picker radius-right" rel="text'+$n+'" disabled></input></td><td><button class="delete" rel="'+$n+'">X</button></td></tr>}';
-                    $parent.children().children().append($string);
+                        $parent.children().children().append($string);
                     }else if($ref=='button'){
                         $string = '<tr><td><input type="button" class="example" value="Example" name="button'+$n+'"></td><td><select class="font" rel="button'+$n+'"><option>Arial</option><option>Helvetica</option><option>Cambria</option><option>Times New Roman</option></select></td><td><select class="size" rel="button'+$n+'"><?php for($i=10; $i<41; $i++){echo '<option value="'.$i.'">'.$i.' px</option>';$i++;}?></select></td><td><span class="before-input radius-left">#</span><input type="text" class="color picker radius-right" rel="button'+$n+'"></input></td><td><span class="before-input radius-left shadow">Horizontal</span><input type="text" class="box-shadow horizontal shadow radius-right" value="0" rel="button'+$n+'"/><span class="before-input radius-left shadow">Vertical</span><input type="text" class="box-shadow vertical shadow radius-right" value="0" rel="button'+$n+'"/><span class="before-input radius-left shadow">Blur</span><input type="text" class="box-shadow blur shadow radius-right" value="0" rel="button'+$n+'"/><br><span class="before-input radius-left shadow">Spread</span><input type="text" class="box-shadow spread shadow radius-right" value="0" rel="button'+$n+'"/><span class="before-input radius-all shadow inset"><input type="checkbox" class="box-shadow inset shadow radius-right" rel="button'+$n+'"/> Inset</span><span class="before-input radius-left shadow">#</span><input type="text" class="box-shadow shadow picker radius-right" width="40" rel="button'+$n+'"></input></td><td><input type="checkbox" class="backgroundColor radius-right" rel="button'+$n+'"/><span class="before-input radius-left">#</span><input type="text" class="backgroundColor picker radius-right" rel="button'+$n+'" disabled></input></td><td><button class="delete" rel="'+$n+'">X</button></td></tr>';
                         $parent.children().children().append($string);
@@ -143,7 +143,7 @@
                         $parent.children().children().append($string);
                     }
                 });
-            });
+});
     </script>
 </body>
 </html>

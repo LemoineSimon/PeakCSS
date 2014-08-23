@@ -2,7 +2,7 @@
 <div id="peakphoto">
     <div class="content">
         <div id="catch">
-            <p class="simple">Simple. Fast. Awesone.</p>
+            <p class="simple">Simple. Fast. Awesome.</p>
             <p class="prepare">Prepare you to create your own framework.</p>
             <a href="#" id="bt_howuse">How to use ?</a>
             <a href="customize.php" id="bt_customize">Customize</a>
